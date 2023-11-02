@@ -1,182 +1,79 @@
-# MySQL
-# Creare baza de date
-create database CinemaTMTA12 ;
-use cinemaTMTA12;
+create database Guru99Aplication;
 
-create table Filme 
-(
-ID int not null auto_increment,
-NumeFilm varchar(25) not null,
-IDGen int not null,
-DataStart date,
-DataFinal date,
-Durata int,
-IDRating int,
-IDSala int,
-primary key(ID)
+create table NewCustomer
+( CustomerName varchar(25) not null,
+Gender varchar(25) not null,
+DateOfBird date not null,
+Adress varchar(25) not null,
+City varchar(25) not null,
+State varchar(25) not null,
+PIN int not null,
+MobileNumber varchar(25) not null,
+Email varchar(25) not null,
+Password varchar(25) not null
 );
 
-# descrie structura unei tabele
-select * from filme;
+desc NewCustomer;
 
-# vizualizare tabele
-desc filme;
+alter table NewCustomer
+drop column newcustomer;
 
-create table GenFilm
+desc NewCustomer;
+
+
+create table NewAccount
 (
-ID int not null,
-TipGen varchar(15)
+ID int primary key not null,
+CustomerID varchar(25) not null,
+AccountType varchar(25) not null,
+InitialDeposit int not null
 );
 
-# redenumire nume tabele
-rename table GenFilm to GenFilme;
+desc NewAccount;
 
-# modificare tip date din coloana
-alter table GenFilme 
-modify TipGen varchar(20);
+create table Deposit (
+ID int not null primary key,
+AccountNo int not null,
+Amount int not null,
+DescriptionA varchar(25) not null
+); 
 
-desc GenFilme;
+desc Deposit;
 
-# modificare nume coloana din tabel 
-alter table GenFilme 
-change TipGen Gen varchar(20);
+alter table NewCustomer 
+change DateOfBird DateOfBirth varchar(20);
 
-desc GenFilme;
+select * from NewCustomer;
 
-select * from GenFilme;
+alter table NewCustomer 
+change Password PasswordID varchar(20);
 
-# Stergere coloana
-alter table GenFilme
-drop column Gen;
+alter table NewCustomer
+add ID int;
 
-# adaugare coloana
-alter table GenFilme
-add TipGen varchar(20);
-
-# adaugare PK primary-key
-alter table GenFilme
-add primary key(ID);
-
-desc GenFilme;
-
-# bool true or false
-create table Sala
-(
-ID int not null auto_increment primary key,
-Nr_locuri int not null,	
-VIP bool 
-);
-
-create table Rating
-(
-ID int auto_increment,
-Valoare_Rating int 
-);
-
-create table Test
-(
-ID int 
-);
-
-#stergere tabele
-drop table Test;
-
-# legatura intre tabele si coloane -adaugare chei straine
-alter table Filme
-add foreign key(IDGen) references Sala(ID);
-
-alter table Filme
-add foreign key(IDSala) references GenFilme(ID);
-
-# Curs 27.10.2023
-
-select * from Filme;
-insert into filme(NumeFilm,IDGen,DataStart,DataFinal,Durata,IDRating,IDSala) values
-('Titanic',3,'2023-10-28','2023-11-03',120,4,6),
-('Indiana Jones',2,'2023-11-05','2023-11-10',185,4,2),
-('Mission Imposibile',2,'2023-11-09','2023-11-16',90,5,4),
-('The Godfather',5,'2023-11-18','2023-11-25',240,5,2);
-
-insert into GenFilme(ID,TipGen) values
-(2,'actiune'),
-(3,'horror'),
-(4,'comedie'),
-(5,'drama'),
-(6,'dragoste'),
-(7,'mister'),
-(8,'sci fi');
+desc NewCustomer;
 
 
-select * from genfilme;
-
-select * from rating;
-
-insert into rating(Valoare_Rating) values
-(0),
-(1),
-(2),
-(3),
-(4),
-(5);
-
-select * from rating;
-
-select * from sala;
-
-insert into sala(Nr_locuri,VIP) values
-(100,true),
-(125,false),
-(75,true),
-(85,true),
-(185,false),
-(130,false);
-
-select * from filme;
-
-select * from filme;
+insert into NewCustomer(CustomerName,Gender,DateOfBirth,Adress,City,State,PIN,MobileNumber,Email,PasswordID,ID) values
+('Ungar Razvan','Male','1974-08-27','Ciocarlei 5','Resita','Caras Severin',658985,'0774903493','r.u@gmail.com',123456,1),
+('Ungar Laura','Female','1977-12-23','Ciocarlei 5','Resita','Caras Severin',321654,'0727253635','u.l.r@gmail.com',654321,2);
 
 
-create table TabelaTest
-(ID int auto_increment primary key,
-test varchar(10));
+select * from newcustomer;
 
-ALTER TABLE tabelatest AUTO_INCREMENT = 1;
 
-select * from tabelatest;
+insert into NewCustomer(CustomerName,Gender,DateOfBirth,Adress,City,State,PIN,MobileNumber,Email,PasswordID,ID) values
+('Fildan Pavel','Male','1983-11-08','Ghurghiului 2','Resita','Caras-Severin',558885,'0753355658','f.p@gmail.com',589898,3);
 
-# Afisati toate datele pentru filmul Titanic
+select * from newcustomer;
 
-select * from filme where NumeFilm='Titanic';
+insert into NewAccount(ID,CustomerID,AccountType,InitialDeposit) values
+(1,207128,'Current',2850),
+(2,209858,'Saving',14650);
 
-select * from filme where id=10;
+select * from NewAccount;
 
-# Afisati toate filmele a caror durata este de doua ore
+insert into Deposit(ID,AccountNo,Amount,DescriptionA) values
+(1,123456789,13650,'Cont deschis');
 
-select * from filme where durata=2;
-
-# Afisati toate datele din tabela Sala
-select * from sala;
-
-# Afisati numele tuturor filmelor care ruleaza in cinema 
-
-select NumeFilm from filme;
-
-# Afisati detaliile despre toate filmele a caror durata este mai mica de 4 ore
-
-select * from filme where durata < 3;
-
-select * from filme;
-
-select * from filme where DataStart > 2023-11-05;
-
-# Afisati numele filmelor
-select NumeFilm from filme where DataStart between '2023-10-28' and '2023-11-18';   
-
-select NumeFilm from filme where (DataStart between '2023-10-28' and '2023-11-18') 
-and (DataFinal between '2023-11-09' and '2023-11-18');
-
-select NumeFilm from filme where DataStart > '2023-10-28' and DataStart <'2023-11-18';
-
-# Afisati numarul total de filme a caror durata este de 2 ore
-
-select count(*)from filme where durata=2;
+select * from Deposit;
