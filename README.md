@@ -34,7 +34,7 @@ change Observatii Categorie varchar(20);
 select * from Patrimoniu;
 
 
-### :heavy_check_mark: Am introdus date in tabelul "Patrimoniu"
+### :heavy_check_mark: Am introdus date in tabelul "Patrimoniu":
 
 insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scriptic,Pret_unitar,Valoare,Diferenta_plus,Diferenta_minus,Categorie) values
 (1,'Birou Caserie','Dulap 2 usi','buc',1,1,450,450,0,0,'Mobilier'),
@@ -121,6 +121,12 @@ insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scr
 (82,'Birou Secretar','Multifunctional Lexmark','buc',1,1,5500,5500,0,0,'Echipamenet IT'),
 (83,'Birou Secretar','UPS','buc',1,1,625,625,0,0,'Echipamenet IT'),
 (84,'Birou Secretar','Aer conditionat','buc',1,1,1205,1205,0,0,'Climatizare');
+
+### :heavy_check_mark:Model cu introducerea in tabel: 
+
+ |ID|Departament|Denumire|UM|Cantitate_faptic|Cantitate_scriptic|Pret_unitar|Valoare|Diferenta_plus|Diferenta_minus|Categorie|
+ |:--:|:-----:|:-----:|:---:|:--:|:--:|:-----:|:-----:|:---:|:---:|:------:|
+ |1|Birou Caserie|Dulap 2 usi|buc|1|1|450|450|0|0|Mobilier|
 
 ![Tabel Patrimoniu](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/TABEL%20PATRIMONIU.jpg)
 
