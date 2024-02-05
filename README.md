@@ -127,7 +127,7 @@ insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scr
 [Baza de date](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Proiect_MySQL%20TM.sql)
 
  |ID|Departament|Denumire|UM|Cantitate_faptic|Cantitate_scriptic|Pret_unitar|Valoare|Diferenta_plus|Diferenta_minus|Categorie|
- |:-:|:------:|:------:|:-:|:-:|:-:|:-:|:---:|:-:|:-:|:--:|
+ |:-:|:----:|:---:|:-:|:-:|:-:|:-:|:--:|:-:|:-:|:--:|
  |1|Birou Caserie|Dulap 2 usi|buc|1|1|450|450|0|0|Mobilier|
 
 ![Tabel Patrimoniu](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/TABEL%20PATRIMONIU.jpg)
