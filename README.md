@@ -122,7 +122,7 @@ insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scr
 (83,'Birou Secretar','UPS','buc',1,1,625,625,0,0,'Echipamenet IT'),
 (84,'Birou Secretar','Aer conditionat','buc',1,1,1205,1205,0,0,'Climatizare');
 
-(!),[https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/TABEL%20PATRIMONIU.jpg]
+![Tabel Patrimoniu](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/TABEL%20PATRIMONIU.jpg)
 
 ### :heavy_check_mark: Am modificat numarul de carcatere text in coloana Denumire
 
