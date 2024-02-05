@@ -124,9 +124,10 @@ insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scr
 (84,'Birou Secretar','Aer conditionat','buc',1,1,1205,1205,0,0,'Climatizare');
 
 ### :heavy_check_mark:Model cu introducerea in tabel: 
+[Baza de date](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Proiect_MySQL%20TM.sql)
 
  |ID|Departament|Denumire|UM|Cantitate_faptic|Cantitate_scriptic|Pret_unitar|Valoare|Diferenta_plus|Diferenta_minus|Categorie|
- |:--:|:-----:|:-----:|:---:|:--:|:--:|:-----:|:-----:|:---:|:---:|:------:|
+ |:-:|:------:|:------:|:-:|:-:|:-:|:-:|:---:|:-:|:-:|:--:|
  |1|Birou Caserie|Dulap 2 usi|buc|1|1|450|450|0|0|Mobilier|
 
 ![Tabel Patrimoniu](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/TABEL%20PATRIMONIU.jpg)
