@@ -1,9 +1,8 @@
+# :pushpin: MySQL Database Project 
+### :pushpin: Baza de date pentru patrimoniul unei localitati 
 
-## Database Aplication Guru99
+### Software folosit : MySql Workbench
 
-[MySql Files](https://github.com/razvanandrei1974/MySQL/blob/main/GURUU99%20APLICATION%20TMTA12.sql)
-
-
-![Reverse Engineering](https://github.com/razvanandrei1974/MySQL/blob/main/GURU99%20DATABASE.jpg)
+## :heavy_check_mark: Am creat baza date : InventarPatrimoniuLocalitate
 
 
