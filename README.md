@@ -126,7 +126,7 @@ insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scr
 (84,'Birou Secretar','Aer conditionat','buc',1,1,1205,1205,0,0,'Climatizare');
 ```
 
-### :heavy_check_mark:Model cu introducerea in tabel: 
+### :heavy_check_mark:Model cu introducerea datelor in tabel pe fiecare departament: 
 
  |ID|Departament|Denumire|UM|Cantitate_faptic|Cantitate_scriptic|Pret_unitar|Valoare|Diferenta_plus|Diferenta_minus|Categorie|
  |:-:|:----:|:---:|:-:|:-:|:-:|:-:|:--:|:-:|:-:|:--:|
