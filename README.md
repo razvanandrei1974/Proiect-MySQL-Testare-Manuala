@@ -1,4 +1,4 @@
-# :pushpin: MySQL Database Project [MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.svg.png) 
+# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
 
 
 ### :pushpin: Baza de date pentru patrimoniul unei localitati 
