@@ -161,7 +161,7 @@ VALUES
 ```
 select * from Patrimoniu;
 ```
-### :heavy_check_mark: Am interogat tabelul Patrimoniu pentru a vedea cea produsul cu cea mai mica valoare din patrimoniu. 
+### :heavy_check_mark: Am interogat tabelul Patrimoniu pentru a vedea produsul cu cea mai mica valoare din patrimoniu. 
 ```
 SELECT MIN(Valoare)
 FROM Patrimoniu;
