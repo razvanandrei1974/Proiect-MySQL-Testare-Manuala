@@ -373,6 +373,10 @@ FROM Patrimoniu;
 ```
 
 
+### :heavy_check_mark: Reverse Engineering Diagram pentru Baza de date : Patrimoniu :
+
+![Reverse Engineering Diagram]()
+
 
 
 
