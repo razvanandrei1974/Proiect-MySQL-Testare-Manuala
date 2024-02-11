@@ -174,7 +174,7 @@ SELECT COUNT(*)
 FROM Patrimoniu;
 ```
 
-### :heavy_check_mark: Am interogat cate ID-uri au valoarea mai mare de 2500 
+### :heavy_check_mark: Am interogat cate ID-uri ale produselor inregistrate in tabelul Patrimoniu, au valoarea mai mare de 2500 lei.
 ```
 SELECT COUNT(Valoare)
 FROM Patrimoniu
