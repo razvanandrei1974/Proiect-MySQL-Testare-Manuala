@@ -269,13 +269,17 @@ UPDATE Patrimoniu
 SET ID = '88'
 WHERE ID = 90;
 ```
-### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice.
+### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a 
+vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in
+tabelul Patrimoniu.
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 INNER JOIN Patrimoniu ON Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
-### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice.
+### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a 
+vedea daca valoarea produselor inregistrate in tabelul AchizitiiPublice corespunde cu valoarea produselor achizitionate si inregistrate in
+tabelul Patrimoniu.
 ```
 SELECT Patrimoniu.Valoare, Patrimoniu.Valoare
 FROM AchizitiiPublice
