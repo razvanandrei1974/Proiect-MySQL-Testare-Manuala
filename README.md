@@ -271,7 +271,7 @@ WHERE ID = 90;
 ```
 ### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice.
 ```
- .SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
+SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 INNER JOIN Patrimoniu ON Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
