@@ -375,7 +375,7 @@ FROM Patrimoniu;
 
 ### :heavy_check_mark: Reverse Engineering Diagram pentru Baza de date : Patrimoniu :
 
-![Reverse Engineering Diagram]()
+![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Reverse%20Engineering%20Diagram.jpg)
 
 
 
