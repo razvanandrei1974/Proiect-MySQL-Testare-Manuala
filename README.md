@@ -271,60 +271,46 @@ UPDATE Patrimoniu
 SET ID = '88'
 WHERE ID = 90;
 ```
-### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a 
-vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in
-tabelul Patrimoniu.
+### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in tabelul Patrimoniu. 
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 INNER JOIN Patrimoniu ON Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
-### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a 
-vedea daca valoarea produselor inregistrate in tabelul AchizitiiPublice corespunde cu valoarea produselor achizitionate si inregistrate in
-tabelul Patrimoniu.
+### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca valoarea produselor inregistrate in tabelul AchizitiiPublice corespunde cu valoarea produselor achizitionate si inregistrate in tabelul Patrimoniu.
 ```
 SELECT Patrimoniu.Valoare, Patrimoniu.Valoare
 FROM AchizitiiPublice
 INNER JOIN Patrimoniu ON Patrimoniu.Valoare = AchizitiiPublice.Valoare;
 ```
 
-### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Left Join din tabelele Patrimoniu si AchizitiiPublicepentru a 
-vedea daca valoarea produselor inregistrate in tabelul Patrimoniu corespunde cu valoarea produselor achizitionate si inregistrate in
-tabelul Achizitii Publice.
+### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Left Join din tabelele Patrimoniu si AchizitiiPublicepentru a vedea daca valoarea produselor inregistrate in tabelul Patrimoniu corespunde cu valoarea produselor achizitionate si inregistrate in tabelul Achizitii Publice.
 ```
 SELECT Patrimoniu.Valoare, Patrimoniu.Valoare
 FROM AchizitiiPublice
 LEFT JOIN Patrimoniu ON Patrimoniu.Valoare = AchizitiiPublice.Valoare;
 ```
-### :heavy_check_mark: Am comparat coloana Valoare cu comanda Left Join din tabelele Patrimoniu si AchizitiiPublice pentru a 
-vedea daca valoarea produselor inregistrate in tabelul Patrimoniu corespunde cu valoarea produselor achizitionate si inregistrate in
-tabelul Achizitii Publice.
+### :heavy_check_mark: Am comparat coloana Valoare cu comanda Left Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca valoarea produselor inregistrate in tabelul Patrimoniu corespunde cu valoarea produselor achizitionate si inregistrate in tabelul Achizitii Publice.
 ```
 SELECT Patrimoniu.Valoare, Patrimoniu.Valoare
 FROM AchizitiiPublice
 RIGHT JOIN Patrimoniu ON Patrimoniu.Valoare = AchizitiiPublice.Valoare;
 ```
 
-### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Right Join din tabelele Patrimoniu si AchizitiiPublice pentru a 
-vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in
-tabelul Patrimoniu.
+### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Right Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in tabelul Patrimoniu.
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 RIGHT JOIN Patrimoniu ON Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
 
-### :heavy_check_mark:  Am comparat cu comanda Cross Join tabelele Patrimoniu si AchizitiiPublice pentru a 
-vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in
-tabelul Patrimoniu.
+### :heavy_check_mark:  Am comparat cu comanda Cross Join tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in tabelul Patrimoniu.
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 CROSS JOIN Patrimoniu Where Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
-### :heavy_check_mark:  Am comparat cu comanda Cross Join tabelele Patrimoniu si AchizitiiPublice pentru a 
-vedea daca ID-ul produselor inregistrate in tabelul AchizitiiPublice corespund cu ID-urile produselor achizitionate si inregistrate in
-tabelul Patrimoniu.
+### :heavy_check_mark:  Am comparat cu comanda Cross Join tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca ID-ul produselor inregistrate in tabelul AchizitiiPublice corespund cu ID-urile produselor achizitionate si inregistrate in tabelul Patrimoniu.
 ```
 SELECT Patrimoniu.Pret_Unitar, Patrimoniu.Pret_Unitar
 FROM AchizitiiPublice
