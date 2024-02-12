@@ -1,3 +1,108 @@
+# :pushpin: Database description: 
+Am creat o baza de date in care am inregistrat toate obiectele de inventar si mijloacele fixe aflate in patrimoniul unei localitati.Am creat o tabela principala cu toate obiectele de inventar si mijloacele fixe si inca o tabela secundara pentru achizitionarea altor obiecte de inventar si mijloace fixe.
+Aceasta baza de date a fost creata pentru a gestiona patrimoniul localitatii departajat pe departamente si pe categorii . 
+
+# :pushpin: Database Schema
+
+You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
+The tables are connected in the following way:
+
+**nume tabela 1** is connected with **nume tabela 2** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
+**nume tabela 3** is connected with **nume tabela 4** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
+**nume tabela 5** is connected with **nume tabela 6** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
+...........
+**nume tabela n** is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
+
+# :pushpin: Database Queries
+
+## :white_check_mark: DDL Data Definition Language 
+Statements are used to manipulate MySQL database schema objects. Examine the use of the CREATE, ALTER, and DROP statements to create, modify, and maintain MySQL databases, tables, and views.
+The following instructions were written in the scope of CREATING the structure of the database (CREATE INSTRUCTIONS)
+
+### :heavy_check_mark: 1.Am creat baza date : InventarPatrimoniuLocalitate
+```
+create database InventarPatrimoniuLocalitate;
+```
+### :heavy_check_mark: 2.Am creat tabelul " Patrimoniu " :
+```
+create table Patrimoniu 
+(
+ID int not null,
+Departament varchar(30),
+Denumire varchar(15),
+UM varchar(15),
+Cantitate_faptic int,
+Cantitate_scriptic int,
+Pret_unitar int,
+Valoare int,
+Diferenta_plus int,
+Diferenta_minus int,
+Observatii varchar(30),
+primary key(ID)
+);
+```
+### :heavy_check_mark: 3.Am creat tabelul "AchizitiiPublice"
+```
+create table AchizitiiPublice
+(
+ID int not null,
+Denumire varchar(30),
+UM varchar(15),
+Cantitate int not null,
+Pret_unitar int,
+Valoare int,
+Departamentul varchar(30),
+Document_intrare int,
+Data_achizitiei date,
+primary key(ID)
+);
+```
+
+
+
+
+
+After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
+
+Inserati aici toate instructiunile de ALTER pe care le-ati scris. Incercati sa includeti instructiuni cat mai variate cum ar fi: - schimbare nume tabela - adaugare sau stergere coloana - redenumire coloana - adaugare proprietati coloana (ex: adaugare auto-increment) - modificare proprietati coloana (ex: modificare tip de data, modificare pozitie coloana etc) - adaugare cheie primara sau secundara (daca nu a fost deja adaugata la crearea tabelei)
+
+DML (Data Manipulation Language)
+In order to be able to use the database I populated the tables with various data necessary in order to perform queries and manipulate the data. In the testing process, this necessary data is identified in the Test Design phase and created in the Test Implementation phase.
+
+Below you can find all the insert instructions that were created in the scope of this project:
+
+Inserati aici toate instructiunile de INSERT pe care le-ati scris. Incercati sa folositi atat insert pe toate coloanele (fara sa precizati pe ce coloane se face insert) cat si insert pe cateva coloane (care necesita mentionarea explicita a coloanelor pe care se face insert). De asemenea, incercati sa acoperiti situatia in care inserati mai multe randuri in acelasi timp
+
+After the insert, in order to prepare the data to be better suited for the testing process, I updated some data in the following way:
+
+Inserati aici toate instructiunile de UPDATE pe care le-ati scris folosind filtrarile necesare astfel incat sa actualizati doar datele de care aveti nevoie
+
+DQL (Data Query Language)
+After the testing process, I deleted the data that was no longer relevant in order to preserve the database clean:
+
+Inserati aici toate instructiunile de DELETE pe care le-ati scris folosind filtrarile necesare astfel incat sa stergeti doar datele de care aveti nevoie
+
+In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:
+
+Inserati aici toate instructiunile de SELECT pe care le-ati scris folosind filtrarile necesare astfel incat sa extrageti doar datele de care aveti nevoie Incercati sa acoperiti urmatoarele:
+- where
+- AND
+- OR
+- NOT
+- like
+- inner join
+- left join
+- OPTIONAL: right join
+- OPTIONAL: cross join
+- functii agregate
+- group by
+- having
+- OPTIONAL DAR RECOMANDAT: Subqueries - nu au fost in scopul cursului. Puteti sa consultati tutorialul asta si daca nu intelegeti ceva contactati fie trainerul, fie coordonatorul de grupa
+
+Conclusions
+Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
+
+*********************************************************************************************************************************
 # :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
 
 
