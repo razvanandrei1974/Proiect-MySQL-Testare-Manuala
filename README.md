@@ -1,6 +1,5 @@
 # :pushpin: Database description: 
-Am creat o baza de date in care am inregistrat toate obiectele de inventar si mijloacele fixe aflate in patrimoniul unei localitati.Am creat o tabela principala cu toate obiectele de inventar si mijloacele fixe si inca o tabela secundara pentru achizitionarea altor obiecte de inventar si mijloace fixe.
-Aceasta baza de date a fost creata pentru a gestiona patrimoniul localitatii departajat pe departamente si pe categorii . 
+We created a database in which we recorded all inventory objects and fixed assets in the patrimony of a locality. We created a main table with all inventory objects and fixed assets and another secondary table for the purchase of other inventory objects and fixed assets. This database was created to manage the patrimony of the locality divided by departments and categories.
 
 # :pushpin: Database Schema
 
@@ -84,93 +83,29 @@ primary key(ID)
 alter table Patrimoniu
 modify Denumire varchar(30);
 ```
-### :heavy_check_mark: I changed the column name from "Observatii" to "Categorie"
+### :heavy_check_mark: I changed the column name from "Observatii" to "Categorie".
 ```
 alter table Patrimoniu 
 change Observatii Categorie varchar(20);
 ```
-
-
-
-DML (Data Manipulation Language)
-In order to be able to use the database I populated the tables with various data necessary in order to perform queries and manipulate the data. In the testing process, this necessary data is identified in the Test Design phase and created in the Test Implementation phase.
-
-Below you can find all the insert instructions that were created in the scope of this project:
-
-Inserati aici toate instructiunile de INSERT pe care le-ati scris. Incercati sa folositi atat insert pe toate coloanele (fara sa precizati pe ce coloane se face insert) cat si insert pe cateva coloane (care necesita mentionarea explicita a coloanelor pe care se face insert). De asemenea, incercati sa acoperiti situatia in care inserati mai multe randuri in acelasi timp
-
-After the insert, in order to prepare the data to be better suited for the testing process, I updated some data in the following way:
-
-Inserati aici toate instructiunile de UPDATE pe care le-ati scris folosind filtrarile necesare astfel incat sa actualizati doar datele de care aveti nevoie
-
-DQL (Data Query Language)
-After the testing process, I deleted the data that was no longer relevant in order to preserve the database clean:
-
-Inserati aici toate instructiunile de DELETE pe care le-ati scris folosind filtrarile necesare astfel incat sa stergeti doar datele de care aveti nevoie
-
-In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:
-
-Inserati aici toate instructiunile de SELECT pe care le-ati scris folosind filtrarile necesare astfel incat sa extrageti doar datele de care aveti nevoie Incercati sa acoperiti urmatoarele:
-- where
-- AND
-- OR
-- NOT
-- like
-- inner join
-- left join
-- OPTIONAL: right join
-- OPTIONAL: cross join
-- functii agregate
-- group by
-- having
-- OPTIONAL DAR RECOMANDAT: Subqueries - nu au fost in scopul cursului. Puteti sa consultati tutorialul asta si daca nu intelegeti ceva contactati fie trainerul, fie coordonatorul de grupa
-
-Conclusions
-Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
-
-*********************************************************************************************************************************
-# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
-
-
-### :pushpin: Baza de date pentru patrimoniul unei localitati 
-[Baza de date](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Proiect_MySQL%20TM.sql)
-
-### Software folosit : MySql Workbench
-
-## :heavy_check_mark: Am creat baza date : InventarPatrimoniuLocalitate
+### :heavy_check_mark: I changed the number of text cases in the "Denumire" column.
 ```
-create database InventarPatrimoniuLocalitate;
+alter table Patrimoniu
+modify Denumire varchar(30);
 ```
-
-### :heavy_check_mark: Am creat tabelul " Patrimoniu " :
-```
-create table Patrimoniu 
-(
-ID int not null,
-Departament varchar(30),
-Denumire varchar(15),
-UM varchar(15),
-Cantitate_faptic int,
-Cantitate_scriptic int,
-Pret_unitar int,
-Valoare int,
-Diferenta_plus int,
-Diferenta_minus int,
-Observatii varchar(30),
-primary key(ID)
-);
-```
-### :heavy_check_mark: Am modificat denumirea coloanei din Observatii in Categorie
-```
-alter table Patrimoniu 
-change Observatii Categorie varchar(20);
-```
-### :heavy_check_mark: Am vizualizat modificarea
+### :heavy_check_mark: I visualized the data in the "Patrimoniu" table
 ```
 select * from Patrimoniu;
 ```
 
-### :heavy_check_mark: Am introdus date in tabelul "Patrimoniu":
+
+
+
+## :white_check_mark: DML (Data Manipulation Language)
+In order to be able to use the database I populated the tables with various data necessary in order to perform queries and manipulate the data. In the testing process, this necessary data is identified in the Test Design phase and created in the Test Implementation phase.
+
+Below you can find all the insert instructions that were created in the scope of this project:
+### :heavy_check_mark: We entered data in the "Patrimoniu" table:
 ```
 insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scriptic,Pret_unitar,Valoare,Diferenta_plus,Diferenta_minus,Categorie) values
 (1,'Birou Caserie','Dulap 2 usi','buc',1,1,450,450,0,0,'Mobilier'),
@@ -258,42 +193,108 @@ insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scr
 (83,'Birou Secretar','UPS','buc',1,1,625,625,0,0,'Echipamenet IT'),
 (84,'Birou Secretar','Aer conditionat','buc',1,1,1205,1205,0,0,'Climatizare');
 ```
-
 ### :heavy_check_mark:Model cu introducerea datelor in tabel pe fiecare departament: 
 
  |ID|Departament|Denumire|UM|Cantitate_faptic|Cantitate_scriptic|Pret_unitar|Valoare|Diferenta_plus|Diferenta_minus|Categorie|
  |:-:|:----:|:---:|:-:|:-:|:-:|:-:|:--:|:-:|:-:|:--:|
  |1|Birou Caserie|Dulap 2 usi|buc|1|1|450|450|0|0|Mobilier|
 
-![Tabel Patrimoniu](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/TABEL%20PATRIMONIU.jpg)
+ ![Tabel Patrimoniu](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/TABEL%20PATRIMONIU.jpg)
 
-### :heavy_check_mark: Am modificat numarul de carcatere text in coloana Denumire
-```
-alter table Patrimoniu
-modify Denumire varchar(30);
-```
-### :heavy_check_mark: Am vizualizat datele din tabelul Patrimoniu
-```
-select * from Patrimoniu;
-```
-### :heavy_check_mark: Am corectat greseala de la randul 15 din tabel
-```
-UPDATE Patrimoniu
-SET Valoare = 1 , Diferenta_minus = 0
-WHERE ID = 15;
-```
-```
-select * from Patrimoniu;
-```
-### :heavy_check_mark: Am mai introdus doua randuri in tabelul Patrimoniu
+ ### :heavy_check_mark: I have inserted two more rows in the table "Patrimoniu".
 ```
 INSERT INTO Patrimoniu (ID,Departament, Denumire, UM, Cantitate_faptic, Cantitate_scriptic, Pret_unitar, Valoare, Diferenta_plus, Diferenta_minus, Categorie)
 VALUES 
 (85,'Birou Secretar','Notebook McBook','buc',1,1,25900,25900,0,0,'Echipamente IT');
 ```
+
+### :heavy_check_mark: I inserted another row in the table "Patrimoniu".
 ```
-select * from Patrimoniu;
+INSERT INTO Patrimoniu (ID,Departament, Denumire, UM, Cantitate_faptic, Cantitate_scriptic, Pret_unitar, Valoare, Diferenta_plus, Diferenta_minus, Categorie)
+VALUES 
+(88,'Birou Secretar','Multifunctional Brother','buc',1,1,2800,2800,0,0,'Echipamente IT');
 ```
+### :heavy_check_mark:  We entered data in the "AchizitiiPublice" table:
+```
+insert into AchizitiiPublice(ID,Denumire,UM,Cantitate,Pret_unitar,Valoare,Departamentul,Document_intrare,Data_achizitiei) values
+(1,'Server HP','buc',1,36800,36800,'BirouContabilitate',568989,'2024-01-18'),
+(2,'Multifunctional Brother','buc',1,2800,2800,'BirouUrbanism',556322,'2024-01-20');
+```
+### :heavy_check_mark:  We add to the "Patrimoniu" table the purchases made with the Insert into command.
+```
+INSERT INTO Patrimoniu (ID,Departament, Denumire, UM, Cantitate_faptic, Cantitate_scriptic, Pret_unitar, Valoare, Diferenta_plus, Diferenta_minus, Categorie)
+VALUES 
+(89,'Birou Contabilitate','Server HP','buc',1,1,36800,36800,0,0,'Echipamente IT'),
+(90,'BirouUrbanism','Multifunctional Brother','buc',1,1,2800,2800,0,0,'Echipamente IT');
+```
+
+
+
+
+ 
+
+
+
+### :white_check_mark: After the insert, in order to prepare the data to be better suited for the testing process, I updated some data in the following way:
+
+### :heavy_check_mark: I corrected the mistake in row 15 of the table.
+```
+UPDATE Patrimoniu
+SET Valoare = 1 , Diferenta_minus = 0
+WHERE ID = 15;
+```
+
+### :heavy_check_mark: I corrected typos in the column "Categorie".
+```
+UPDATE Patrimoniu
+SET Categorie = 'Mobilier'
+WHERE ID = 60;
+```
+### :heavy_check_mark: We corrected the numbering of IDs.
+```
+UPDATE Patrimoniu
+SET ID = '86'
+WHERE ID = 88;
+```
+
+
+
+
+
+
+DQL (Data Query Language)
+After the testing process, I deleted the data that was no longer relevant in order to preserve the database clean:
+
+Inserati aici toate instructiunile de DELETE pe care le-ati scris folosind filtrarile necesare astfel incat sa stergeti doar datele de care aveti nevoie
+
+In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:
+
+Inserati aici toate instructiunile de SELECT pe care le-ati scris folosind filtrarile necesare astfel incat sa extrageti doar datele de care aveti nevoie Incercati sa acoperiti urmatoarele:
+- where
+- AND
+- OR
+- NOT
+- like
+- inner join
+- left join
+- OPTIONAL: right join
+- OPTIONAL: cross join
+- functii agregate
+- group by
+- having
+- OPTIONAL DAR RECOMANDAT: Subqueries - nu au fost in scopul cursului. Puteti sa consultati tutorialul asta si daca nu intelegeti ceva contactati fie trainerul, fie coordonatorul de grupa
+
+Conclusions
+Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
+
+*********************************************************************************************************************************
+# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
+
+
+
+
+
+
 ### :heavy_check_mark: Am interogat tabelul Patrimoniu pentru a vedea produsul cu cea mai mica valoare din patrimoniu. 
 ```
 SELECT MIN(Valoare)
@@ -325,70 +326,12 @@ SELECT COUNT(ID), Categorie
 FROM Patrimoniu
 GROUP BY Categorie;
 ```
-### :heavy_check_mark: Am corectat greselile de scriere din coloana Categorie.
-```
-UPDATE Patrimoniu
-SET Categorie = 'Mobilier'
-WHERE ID = 60;
-```
-### :heavy_check_mark: Am mai introdus un rand in tabelul Patrimoniu
-```
-INSERT INTO Patrimoniu (ID,Departament, Denumire, UM, Cantitate_faptic, Cantitate_scriptic, Pret_unitar, Valoare, Diferenta_plus, Diferenta_minus, Categorie)
-VALUES 
-(88,'Birou Secretar','Multifunctional Brother','buc',1,1,2800,2800,0,0,'Echipamente IT');
-```
-### :heavy_check_mark: Am corectat numerotarea ID-urilor.
-```
-UPDATE Patrimoniu
-SET ID = '86'
-WHERE ID = 88;
-```
-```
-SELECT * from Patrimoniu;
-```
-### :heavy_check_mark:  Am creat tabelul "AchizitiiPublice"
-```
-create table AchizitiiPublice
-(
-ID int not null,
-Denumire varchar(30),
-UM varchar(15),
-Cantitate int not null,
-Pret_unitar int,
-Valoare int,
-Departamentul varchar(30),
-Document_intrare int,
-Data_achizitiei date,
-primary key(ID)
-);
-```
 
-### :heavy_check_mark:  Stergem tabelul AchizitiPublice.
-```
-drop table AchizitiiPublice;
-```
-### :heavy_check_mark:  Am recreat tabelul AchizitiiPublice
-```
-create table AchizitiiPublice
-(
-ID int not null,
-Denumire varchar(30),
-UM varchar(15),
-Cantitate int not null,
-Pret_unitar int,
-Valoare int,
-Departamentul varchar(30),
-Document_intrare int,
-Data_achizitiei date,
-primary key(ID)
-);
-```
-### :heavy_check_mark:  Introducem date in tabelul AchizitiiPublice
-```
-insert into AchizitiiPublice(ID,Denumire,UM,Cantitate,Pret_unitar,Valoare,Departamentul,Document_intrare,Data_achizitiei) values
-(1,'Server HP','buc',1,36800,36800,'BirouContabilitate',568989,'2024-01-18'),
-(2,'Multifunctional Brother','buc',1,2800,2800,'BirouUrbanism',556322,'2024-01-20');
-```
+
+
+
+
+
 ### :heavy_check_mark:  Adaugam in tabelul Patrimoniu achizitiile facute cu comanda Insert Into
 ```
 INSERT INTO Patrimoniu (ID,Departament, Denumire, UM, Cantitate_faptic, Cantitate_scriptic, Pret_unitar, Valoare, Diferenta_plus, Diferenta_minus, Categorie)
