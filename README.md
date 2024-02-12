@@ -259,143 +259,136 @@ WHERE ID = 90;
 ## :white_check_mark: DQL (Data Query Language)
 After the testing process, I deleted the data that was no longer relevant in order to preserve the database clean:
 
-Inserati aici toate instructiunile de DELETE pe care le-ati scris folosind filtrarile necesare astfel incat sa stergeti doar datele de care aveti nevoie
+# Inserati aici toate instructiunile de DELETE pe care le-ati scris folosind filtrarile necesare astfel incat sa stergeti doar datele de care aveti nevoie
 
 In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:
 
-### :heavy_check_mark: Am interogat tabelul Patrimoniu pentru a vedea produsul cu cea mai mica valoare din patrimoniu. 
+### :heavy_check_mark: We queried the Heritage table to see the product with the lowest value in the heritage of the locality.
 ```
 SELECT MIN(Valoare)
 FROM Patrimoniu;
 ```
 select * from Patrimoniu;
 
-### :heavy_check_mark: Am interogat cate inregistrari avem in tabelul Patrimoniu 
+### :heavy_check_mark: We questioned how many records we have in the table "Patrimoniu".
 ```
 SELECT COUNT(*)
 FROM Patrimoniu;
 ```
 
-### :heavy_check_mark: Am interogat cate ID-uri ale produselor inregistrate in tabelul Patrimoniu, au valoarea mai mare de 2500 lei.
+### :heavy_check_mark: We questioned how many IDs of the products registered in the "Patrimoniu" table have a value greater than 2500 lei.
 ```
 SELECT COUNT(Valoare)
 FROM Patrimoniu
 WHERE Valoare > 2500;
 ```
-### :heavy_check_mark: Am calculat valoarea totala a coloanei "Valoare" din tabelul Patrimoniu pentru a vedea valoarea totala a patrimoniului.
+### :heavy_check_mark: We've calculated the total value of the "Value" column in the "Patrimoniu" table to see the total heritage value.
 ```
 SELECT SUM(Valoare) AS total
 FROM Patrimoniu;
 ```
 
-### :heavy_check_mark: Am centralizat datele din tabelul Patrimoniu dupa Categorie. 
+### :heavy_check_mark: We have centralized the data from the "Patrimoniu" table by Category. 
 ```
 SELECT COUNT(ID), Categorie
 FROM Patrimoniu
 GROUP BY Categorie;
 ```
 
-
-
-
-
-
-
-
-### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in tabelul Patrimoniu. 
+### :heavy_check_mark:  We compared the Name column with the Inner Join command in the "Patrimoniu" and "Achizitii Publice" tables to see if the names of the products registered in the "Achizitii Publice" table correspond to the names of the products purchased and registered in the "Patrimoniu" table. 
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 INNER JOIN Patrimoniu ON Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
-### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca valoarea produselor inregistrate in tabelul AchizitiiPublice corespunde cu valoarea produselor achizitionate si inregistrate in tabelul Patrimoniu.
+### :heavy_check_mark:  We compared the Value column with the Inner Join command in the "Patrimoniu" and "Achizitii Publice" tables to see if the value of the products registered in the "Achizitii publice" table corresponds to the value of the products purchased and registered in the "Patrimoniu" table.
 ```
 SELECT Patrimoniu.Valoare, Patrimoniu.Valoare
 FROM AchizitiiPublice
 INNER JOIN Patrimoniu ON Patrimoniu.Valoare = AchizitiiPublice.Valoare;
 ```
 
-### :heavy_check_mark:  Am comparat coloana Valoare cu comanda Left Join din tabelele Patrimoniu si AchizitiiPublicepentru a vedea daca valoarea produselor inregistrate in tabelul Patrimoniu corespunde cu valoarea produselor achizitionate si inregistrate in tabelul Achizitii Publice.
+### :heavy_check_mark:  We compared the Value column with the Left Join command in the "Patrimoniu" and "Achizitii Publice" tables to see if the value of the products registered in the "Patrimoniu" table corresponds to the value of the products purchased and registered in the "Achizitii Publice" table.
 ```
 SELECT Patrimoniu.Valoare, Patrimoniu.Valoare
 FROM AchizitiiPublice
 LEFT JOIN Patrimoniu ON Patrimoniu.Valoare = AchizitiiPublice.Valoare;
 ```
-### :heavy_check_mark: Am comparat coloana Valoare cu comanda Left Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca valoarea produselor inregistrate in tabelul Patrimoniu corespunde cu valoarea produselor achizitionate si inregistrate in tabelul Achizitii Publice.
+### :heavy_check_mark: We compared the Value column with the Left Join command in the "Patrimoniu" and "Achizitii Publice" tables to see if the value of the products registered in the Heritage table corresponds to the value of the products purchased and registered in the"Achizitii Publice" table.
 ```
 SELECT Patrimoniu.Valoare, Patrimoniu.Valoare
 FROM AchizitiiPublice
 RIGHT JOIN Patrimoniu ON Patrimoniu.Valoare = AchizitiiPublice.Valoare;
 ```
 
-### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Right Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in tabelul Patrimoniu.
+### :heavy_check_mark:  We compared the Name column with the Right Join command in the "Patrimoniu" and "Achizitii Publice" tables to see if the names of the products registered in the "Achizitii Publice" table correspond to the names of the products purchased and registered in the "Patrimoniu" table.
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 RIGHT JOIN Patrimoniu ON Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
 
-### :heavy_check_mark:  Am comparat cu comanda Cross Join tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in tabelul Patrimoniu.
+### :heavy_check_mark:  We compared with the Cross Join command the "Patrimoniu" and "Achizitii Publice" tables to see if the names of the products registered in the "Achizitii Publice" table correspond to the names of the products purchased and registered in the "Patrimoniu" table.
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
 CROSS JOIN Patrimoniu Where Patrimoniu.Denumire = AchizitiiPublice.Denumire;
 ```
-### :heavy_check_mark:  Am comparat cu comanda Cross Join tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca ID-ul produselor inregistrate in tabelul AchizitiiPublice corespund cu ID-urile produselor achizitionate si inregistrate in tabelul Patrimoniu.
+### :heavy_check_mark:  We compared with the Cross Join command the "Patrimoniu" and "Achizitii Publice" tables to see if the ID of the products registered in the "Achizitii Publice" table corresponds to the IDs of the purchased products and registered in the "Patrimoniu" table.
 ```
 SELECT Patrimoniu.Pret_Unitar, Patrimoniu.Pret_Unitar
 FROM AchizitiiPublice
 CROSS JOIN Patrimoniu Where Patrimoniu.Pret_Unitar = AchizitiiPublice.ID;
 ```
-### :heavy_check_mark:  Am interogat tabelul Patrimoniul pentru a vedea in care departamnete se regaseste produsul "scaun Papilon" .
+### :heavy_check_mark:  We queried the "Patrimoniu" table to see in which departments the product "Papilon chair" is found.
 ```
 SELECT * FROM Patrimoniu
 WHERE Denumire = 'scaun papilon' OR departament = '*';
 ```
-### :heavy_check_mark: Am interogat tabelul Patrimoniul pentru a vedea in care departamente se regasesc  produse din categoria Echipamente IT.
+### :heavy_check_mark: We queried the "Patrimoniu" table to see in which departments there are products from the IT Equipment category.
 ```
 SELECT * FROM Patrimoniu
 WHERE Categorie = 'Echipamente IT' OR departament = '*';
 ```
-### :heavy_check_mark:  Am interogat tabelul Patrimoniul pentru a vedea in care departamente se regaseste produsul "Imprimanta Canon".
+### :heavy_check_mark:  We queried the "Patrimoniu" table to see in which departments the product "Canon Printer" is found.
 ```
 SELECT * FROM Patrimoniu
 WHERE Denumire = 'Imprimanta Canon' OR departament = '*';
 ```
-### :heavy_check_mark:  Am interogat tabelul Patrimoniul pentru a vedea in care departament nu se regasesc produse din categoria "Mobilier".
+### :heavy_check_mark:  We queried the "Patrimoniu" table to see in which department there are no products from the "Mobilier" category.
 ```
 SELECT * FROM Patrimoniu
 WHERE NOT Categorie = 'Mobilier';
 ```
-### :heavy_check_mark:  Am selectat din tabelul Patrimoniu coloanele Denumire, Departament si Valoare
+### :heavy_check_mark:  We selected from the "Patrimoniu" table the headings Name, Department and Value
 ```
 SELECT Denumire, Departament, Valoare
 FROM Patrimoniu;
 ```
-### :heavy_check_mark:  Am interogat tabelul Patrimoniu pentru a afla care produse incep cu litera "i".
+### :heavy_check_mark:  We queried the "Patrimoniu" table to find out which products begin with the letter "i".
 ```
 SELECT * FROM patrimoniu
 WHERE Denumire LIKE 'i%';
 ```
 
-### :heavy_check_mark:  Am interogat tabelul Patrimoniu pentru a afla care produse incep cu litera "d".
+### :heavy_check_mark:  We queried the "Patrimoniu" table to find out which products begin with the letter "d".
 ```
 SELECT * FROM patrimoniu
 WHERE Denumire LIKE 'd%';
 ```
-### :heavy_check_mark:  Am interogat tabelul Patrimoniu pentru a afla media coloanei valoare.
+### :heavy_check_mark:  We queried the Heritage table to find out the average value column.
 ```
 SELECT AVG(Valoare)
 FROM Patrimoniu;
 ```
-### :heavy_check_mark:  Am interogat tabelul Patrimoniu pentru a afla media coloanei valoare la produsele cu o valoare mai mare sau egala cu 100.
+### :heavy_check_mark:  We queried the "Patrimoniu" table to find out the average value column for products with a value greater than or equal to 100.
 ```
 SELECT AVG(Valoare)
 FROM Patrimoniu
 WHERE Valoare >= 100;
 ```
 
-### :heavy_check_mark: Am calculat valoarea totala a coloanei "Valoare".
+### :heavy_check_mark: We calculated the total value of the "Value" column.
 ```
 SELECT SUM(Valoare)
 FROM Patrimoniu;
