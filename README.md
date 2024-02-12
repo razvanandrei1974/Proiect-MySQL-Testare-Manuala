@@ -228,13 +228,6 @@ VALUES
 (90,'BirouUrbanism','Multifunctional Brother','buc',1,1,2800,2800,0,0,'Echipamente IT');
 ```
 
-
-
-
- 
-
-
-
 ### :white_check_mark: After the insert, in order to prepare the data to be better suited for the testing process, I updated some data in the following way:
 
 ### :heavy_check_mark: I corrected the mistake in row 15 of the table.
@@ -256,44 +249,19 @@ UPDATE Patrimoniu
 SET ID = '86'
 WHERE ID = 88;
 ```
+### :heavy_check_mark:  Corrected IDs. 
+```
+UPDATE Patrimoniu
+SET ID = '88'
+WHERE ID = 90;
+```
 
-
-
-
-
-
-DQL (Data Query Language)
+## :white_check_mark: DQL (Data Query Language)
 After the testing process, I deleted the data that was no longer relevant in order to preserve the database clean:
 
 Inserati aici toate instructiunile de DELETE pe care le-ati scris folosind filtrarile necesare astfel incat sa stergeti doar datele de care aveti nevoie
 
 In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:
-
-Inserati aici toate instructiunile de SELECT pe care le-ati scris folosind filtrarile necesare astfel incat sa extrageti doar datele de care aveti nevoie Incercati sa acoperiti urmatoarele:
-- where
-- AND
-- OR
-- NOT
-- like
-- inner join
-- left join
-- OPTIONAL: right join
-- OPTIONAL: cross join
-- functii agregate
-- group by
-- having
-- OPTIONAL DAR RECOMANDAT: Subqueries - nu au fost in scopul cursului. Puteti sa consultati tutorialul asta si daca nu intelegeti ceva contactati fie trainerul, fie coordonatorul de grupa
-
-Conclusions
-Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
-
-*********************************************************************************************************************************
-# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
-
-
-
-
-
 
 ### :heavy_check_mark: Am interogat tabelul Patrimoniu pentru a vedea produsul cu cea mai mica valoare din patrimoniu. 
 ```
@@ -332,19 +300,8 @@ GROUP BY Categorie;
 
 
 
-### :heavy_check_mark:  Adaugam in tabelul Patrimoniu achizitiile facute cu comanda Insert Into
-```
-INSERT INTO Patrimoniu (ID,Departament, Denumire, UM, Cantitate_faptic, Cantitate_scriptic, Pret_unitar, Valoare, Diferenta_plus, Diferenta_minus, Categorie)
-VALUES 
-(89,'Birou Contabilitate','Server HP','buc',1,1,36800,36800,0,0,'Echipamente IT'),
-(90,'BirouUrbanism','Multifunctional Brother','buc',1,1,2800,2800,0,0,'Echipamente IT');
-```
-### :heavy_check_mark:  Corectam ID-urile 
-```
-UPDATE Patrimoniu
-SET ID = '88'
-WHERE ID = 90;
-```
+
+
 ### :heavy_check_mark:  Am comparat coloana Denumire cu comanda Inner Join din tabelele Patrimoniu si AchizitiiPublice pentru a vedea daca denumirea produselor inregistrate in tabelul AchizitiiPublice corespund cu denumirile produselor achizitionate si inregistrate in tabelul Patrimoniu. 
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
@@ -443,6 +400,32 @@ WHERE Valoare >= 100;
 SELECT SUM(Valoare)
 FROM Patrimoniu;
 ```
+- where
+- AND
+- OR
+- NOT
+- like
+- inner join
+- left join
+- OPTIONAL: right join
+- OPTIONAL: cross join
+- functii agregate
+- group by
+- having
+- OPTIONAL DAR RECOMANDAT: Subqueries - nu au fost in scopul cursului. Puteti sa consultati tutorialul asta si daca nu intelegeti ceva contactati fie trainerul, fie coordonatorul de grupa
+
+Conclusions
+Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
+
+*********************************************************************************************************************************
+# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
+
+
+
+
+
+
+
 
 
 ### :heavy_check_mark: Reverse Engineering Diagram pentru Baza de date : Patrimoniu :
