@@ -1,3 +1,5 @@
+# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
+
 # :pushpin: Database description: 
 We created a database in which we recorded all inventory objects and fixed assets in the patrimony of a locality. We created a main table with all inventory objects and fixed assets and another secondary table for the purchase of other inventory objects and fixed assets. This database was created to manage the patrimony of the locality divided by departments and categories.
 
@@ -5,6 +7,10 @@ We created a database in which we recorded all inventory objects and fixed asset
 
 You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
 The tables are connected in the following way:
+### :heavy_check_mark: Reverse Engineering Diagram pentru Baza de date : Patrimoniu :
+
+![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Reverse%20Engineering%20Diagram.jpg)
+
 
 **nume tabela 1** is connected with **nume tabela 2** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
 **nume tabela 3** is connected with **nume tabela 4** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
@@ -411,7 +417,6 @@ Conclusions
 Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
 
 *********************************************************************************************************************************
-# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL.jpg) 
 
 
 
@@ -421,9 +426,7 @@ Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe car
 
 
 
-### :heavy_check_mark: Reverse Engineering Diagram pentru Baza de date : Patrimoniu :
 
-![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Reverse%20Engineering%20Diagram.jpg)
 
 
 
