@@ -19,11 +19,11 @@ The tables are connected in the following way:
 Statements are used to manipulate MySQL database schema objects. Examine the use of the CREATE, ALTER, and DROP statements to create, modify, and maintain MySQL databases, tables, and views.
 The following instructions were written in the scope of CREATING the structure of the database (CREATE INSTRUCTIONS)
 
-### :heavy_check_mark: 1.Am creat baza date : InventarPatrimoniuLocalitate
+### :heavy_check_mark: 1.We created the database : InventoryPatrimonyLocality
 ```
 create database InventarPatrimoniuLocalitate;
 ```
-### :heavy_check_mark: 2.Am creat tabelul " Patrimoniu " :
+### :heavy_check_mark: 2.We have created the table " Patrimoniu " :
 ```
 create table Patrimoniu 
 (
@@ -41,7 +41,7 @@ Observatii varchar(30),
 primary key(ID)
 );
 ```
-### :heavy_check_mark: 3.Am creat tabelul "AchizitiiPublice"
+### :heavy_check_mark: 3.We have created the table "AchizitiiPublice"
 ```
 create table AchizitiiPublice
 (
@@ -57,14 +57,40 @@ Data_achizitiei date,
 primary key(ID)
 );
 ```
+### :heavy_check_mark: 4.Delete table AchizitiPublice.
+```
+drop table AchizitiiPublice;
+```
+### :heavy_check_mark:  5.I recreated the table AchizitiiPublice
+```
+create table AchizitiiPublice
+(
+ID int not null,
+Denumire varchar(30),
+UM varchar(15),
+Cantitate int not null,
+Pret_unitar int,
+Valoare int,
+Departamentul varchar(30),
+Document_intrare int,
+Data_achizitiei date,
+primary key(ID)
+);
+```
+### :white_check_mark: After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
+
+### :heavy_check_mark: I changed the number of text cases in the "Denumire" column :
+```
+alter table Patrimoniu
+modify Denumire varchar(30);
+```
+### :heavy_check_mark: I changed the column name from "Observatii" to "Categorie"
+```
+alter table Patrimoniu 
+change Observatii Categorie varchar(20);
+```
 
 
-
-
-
-After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
-
-Inserati aici toate instructiunile de ALTER pe care le-ati scris. Incercati sa includeti instructiuni cat mai variate cum ar fi: - schimbare nume tabela - adaugare sau stergere coloana - redenumire coloana - adaugare proprietati coloana (ex: adaugare auto-increment) - modificare proprietati coloana (ex: modificare tip de data, modificare pozitie coloana etc) - adaugare cheie primara sau secundara (daca nu a fost deja adaugata la crearea tabelei)
 
 DML (Data Manipulation Language)
 In order to be able to use the database I populated the tables with various data necessary in order to perform queries and manipulate the data. In the testing process, this necessary data is identified in the Test Design phase and created in the Test Implementation phase.
