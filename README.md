@@ -470,15 +470,15 @@ Angajati Where salar > (SELECT avg(salar) FROM Angajati));
 
 # C.R.U.D
 ### :pushpin: C=Create, R=Read, U=Update, D=Delete
-```
-### :heavy_check_mark: Create
 
+### :heavy_check_mark: Create
+```
 Insert into Angajati(angajat_id,nume_angajat,oras,stare_civila,id_departament,departament,salar,data_angajarii) VALUES
 ('011','Vasile Lucian','Brasov','Necasatorit','1001','Resurse Umane',6150,'2023-06-05');
-
+```
 
 ### :heavy_check_mark: Read
-
+```
 select nume_angajat, oras, salar, departament
 from angajati
 where departament = (
@@ -486,9 +486,10 @@ where departament = (
    from Angajati
    where nume_angajat = 'Filip Alexandru'
    );
-   
+  ```
+ 
 ### :heavy_check_mark: Update 
-
+```
 update angajati
 set departament = (
 select departament
@@ -496,17 +497,17 @@ from angajati
 where nume_angajat = 'Fildan Pavel'
 )
 where nume_angajat = 'Filip Alexandru';
-
+```
 
 ### :heavy_check_mark: Delete
-
+```
 delete from angajati
 where departament = (
 select departament
 from angajati
 where nume_angajat = 'Popa Elena'
 );
-
+```
 
 
 
