@@ -515,9 +515,9 @@ where nume_angajat = 'Popa Elena'
 
 In the Mysql course we learned to create a database with the help of MySQL Workbench. 
 In the first phase I learned the three languages used to create a database correctly.
-### :heavy_check_mark: - DDL - The Data Definition Language, or DDL, is made up of the commands responsible for creating, editing and deleting SQL tables. These commands are CREATE TABLE, ALTER TABLE, and DROP TABLE.
-### :heavy_check_mark: * DML - The Data Manipulation Language, or DML for short, is the group of commands responsible for manipulating data in a database; this generally entails inserting, editing, or deleting rows in SQL tables.The commands described above (INSERT, UPDATE, and DELETE) represent the main SQL operations for data manipulation and thus make up the Data Manipulation Language.
-### :heavy_check_mark: + DQL - The Data Query Language, or DQL for short, is the group of commands responsible for querying data from a database. The principal DQL command in SQL is the SELECT command, which retrieves data from one or more tables.
+### :heavy_check_mark: DDL - The Data Definition Language, or DDL, is made up of the commands responsible for creating, editing and deleting SQL tables. These commands are CREATE TABLE, ALTER TABLE, and DROP TABLE.
+### :heavy_check_mark: DML - The Data Manipulation Language, or DML for short, is the group of commands responsible for manipulating data in a database; this generally entails inserting, editing, or deleting rows in SQL tables.The commands described above (INSERT, UPDATE, and DELETE) represent the main SQL operations for data manipulation and thus make up the Data Manipulation Language.
+### :heavy_check_mark: DQL - The Data Query Language, or DQL for short, is the group of commands responsible for querying data from a database. The principal DQL command in SQL is the SELECT command, which retrieves data from one or more tables.
 ### We learned to populate a table with data, modify data in a table, delete data from tables, delete tables, use primary_key, query tables, modify data in columns, link tables, query columns or rows in a table.
 
 
