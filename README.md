@@ -399,19 +399,23 @@ WHERE Valoare >= 100;
 SELECT SUM(Valoare)
 FROM Patrimoniu;
 ```
-- where
-- AND
-- OR
-- NOT
-- like
-- inner join
-- left join
-- OPTIONAL: right join
-- OPTIONAL: cross join
-- functii agregate
-- group by
-- having
-- OPTIONAL DAR RECOMANDAT: Subqueries - nu au fost in scopul cursului. Puteti sa consultati tutorialul asta si daca nu intelegeti ceva contactati fie trainerul, fie coordonatorul de grupa
+# :pushpin: Subquery
+
+## :heavy_check_mark: We created two more tables for querying them with the subquery function
+
+### :heavy_check_mark: We created the table " Angajati".
+```
+Create table Angajati
+(angajat_id varchar(10),
+nume_angajat varchar(30),
+oras varchar(20),
+stare_civila varchar(25),
+id_departament varchar(10),
+departament varchar(25),
+salar int,
+data_angajarii date
+);
+```
 
 Conclusions
 Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
