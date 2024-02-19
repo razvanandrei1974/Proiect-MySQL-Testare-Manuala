@@ -399,6 +399,8 @@ WHERE Valoare >= 100;
 SELECT SUM(Valoare)
 FROM Patrimoniu;
 ```
+
+
 # :pushpin: Subquery
 
 ## :heavy_check_mark: We created two more tables for querying them with the subquery function
@@ -416,6 +418,99 @@ salar int,
 data_angajarii date
 );
 ```
+### :heavy_check_mark: We created the table "Departamente".
+
+```
+Create table Departamente
+(nr_crt int,
+nume_departament varchar(30),
+id_departament varchar(20),
+primary key(id_departament)
+);
+```
+### :heavy_check_mark: We enter data in the "Angajati" table.
+```
+Insert into Angajati(angajat_id,nume_angajat,oras,stare_civila,id_departament,departament,salar,data_angajarii) VALUES
+('001','Popescu Ioan','Cluj-Napoca','Casatorit','1001','Resurse Umane',5800,'2018-05-13'),
+('002','Fildan Pavel','Timisoara','Casatorit','1005','Administratie',7300,'2015-06-01'),
+('003','Filip Alexandru','Botosani','Necasatorit','1002','Departamnet IT',8500,'2021-03-17'),
+('004','Serbanescu Paul','Bucuresti','Casatorit','1003','Marketing',5100,'2017-08-01'),
+('005','Popovici Ioan','Arad','Casatorit','1002','Departamnet IT',8500,'2021-04-21'),
+('006','Csortan Gabriela','Oradea','Casatorita','1004','Vanzari',6350,'2012-05-22'),
+('007','Paraschivescu Claudia','Bucuresti','Divortata','1003','Marketing',5750,'2014-09-01'),
+('008','Maletici Florin','Alba Iulia','Necasatorit','1002','Departamnet IT',9500,'2011-02-22'),
+('009','Popa Elena','Timisoara','Casatorita','1005','Administratie',10500,'2011-08-17'),
+('010','Maris Alina','Cluj Napoca','Necasatorita','1004','Vanzari',6400,'2019-11-05');
+```
+### :heavy_check_mark: We enter data in the "Departamente" table.
+```
+Insert Into Departamente(nr_crt,nume_departament,id_departament) VALUES
+('001','Resurse Umane','1001'),
+('002','Departament IT','1002'),
+('003','Marketing','1003'),
+('004','Vanzari','1004'),
+('005','Administratie','1005');
+```
+### :heavy_check_mark: Subquery that returns multiple columns as output to the parent query.
+```
+select nume_angajat, salar, oras, departament
+FROM Angajati
+WHERE (angajat_id, departament) in
+(SELECT angajat_id, nume_departament FROM
+Departamente);
+```
+### :heavy_check_mark: Retrieve salary details for salarys higher that the average.
+```
+select nume_angajat, salar, stare_civila
+from Angajati
+Where angajat_id IN 
+(SELECT angajat_id FROM
+Angajati Where salar > (SELECT avg(salar) FROM Angajati));
+```
+
+# C.R.U.D
+### :pushpin: C=Create, R=Read, U=Update, D=Delete
+```
+### :heavy_check_mark: Create
+
+Insert into Angajati(angajat_id,nume_angajat,oras,stare_civila,id_departament,departament,salar,data_angajarii) VALUES
+('011','Vasile Lucian','Brasov','Necasatorit','1001','Resurse Umane',6150,'2023-06-05');
+
+
+### :heavy_check_mark: Read
+
+select nume_angajat, oras, salar, departament
+from angajati
+where departament = (
+   select departament
+   from Angajati
+   where nume_angajat = 'Filip Alexandru'
+   );
+   
+### :heavy_check_mark: Update 
+
+update angajati
+set departament = (
+select departament
+from angajati
+where nume_angajat = 'Fildan Pavel'
+)
+where nume_angajat = 'Filip Alexandru';
+
+
+### :heavy_check_mark: Delete
+
+delete from angajati
+where departament = (
+select departament
+from angajati
+where nume_angajat = 'Popa Elena'
+);
+
+
+
+
+
 
 Conclusions
 Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat
