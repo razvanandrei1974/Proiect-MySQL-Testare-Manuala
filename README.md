@@ -511,7 +511,7 @@ where nume_angajat = 'Popa Elena'
 
 ![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Reverse%20Engineering%20Diagram%201.jpg)
 
-### :pushpin: Conclusion
+# :pushpin: Conclusion
 
 In the Mysql course we learned to create a database with the help of MySQL Workbench. 
 In the first phase I learned the three languages used to create a database correctly.
