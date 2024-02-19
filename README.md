@@ -509,7 +509,7 @@ where nume_angajat = 'Popa Elena'
 );
 ```
 
-![Reverse Engineering Diagram]
+![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Reverse%20Engineering%20Diagram%201.jpg)
 
 ### :pushpin: Conclusion
 
