@@ -1,6 +1,7 @@
-# :pushpin: MySQL Database Project ![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL1.jpg) 
+![MySql](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/MySQL1.jpg) 
 
 
+# :pushpin: MySQL Database Project 
 
 # :pushpin: Database description: 
 We created a database in which we recorded all inventory objects and fixed assets in the patrimony of a locality. We created a main table with all inventory objects and fixed assets and another secondary table for the purchase of other inventory objects and fixed assets. This database was created to manage the patrimony of the locality divided by departments and categories.
