@@ -268,8 +268,6 @@ WHERE ID = 90;
 ## :white_check_mark: DQL (Data Query Language)
 After the testing process, I deleted the data that was no longer relevant in order to preserve the database clean:
 
-# Inserati aici toate instructiunile de DELETE pe care le-ati scris folosind filtrarile necesare astfel incat sa stergeti doar datele de care aveti nevoie
-
 In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:
 
 ### :heavy_check_mark: We queried the Heritage table to see the product with the lowest value in the heritage of the locality.
@@ -304,7 +302,7 @@ FROM Patrimoniu
 GROUP BY Categorie;
 ```
 
-### :heavy_check_mark:  We compared the Name column with the Inner Join command in the "Patrimoniu" and "Achizitii Publice" tables to see if the names of the products registered in the "Achizitii Publice" table correspond to the names of the products purchased and registered in the "Patrimoniu" table. 
+### :heavy_check_mark: I made an Inner Join between the "Patrimoniu" and "Achizitii Publice" tables based on the name field in order to check all the patrimony investments were made through public aquisitions
 ```
 SELECT Patrimoniu.Denumire, Patrimoniu.Denumire
 FROM AchizitiiPublice
