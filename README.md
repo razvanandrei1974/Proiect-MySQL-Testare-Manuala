@@ -82,7 +82,7 @@ Data_achizitiei date,
 primary key(ID)
 );
 ```
-### :white_check_mark: After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
+##### :white_check_mark: After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
 
 ### :heavy_check_mark: I changed the number of text cases in the "Denumire" column :
 ```
