@@ -82,7 +82,7 @@ Data_achizitiei date,
 primary key(ID)
 );
 ```
-##### :white_check_mark: After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
+#### :white_check_mark: After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
 
 ### :heavy_check_mark: I changed the number of text cases in the "Denumire" column :
 ```
@@ -199,7 +199,7 @@ insert into Patrimoniu(ID,Departament,Denumire,UM,Cantitate_faptic,Cantitate_scr
 (83,'Birou Secretar','UPS','buc',1,1,625,625,0,0,'Echipamenet IT'),
 (84,'Birou Secretar','Aer conditionat','buc',1,1,1205,1205,0,0,'Climatizare');
 ```
-### :heavy_check_mark:Model cu introducerea datelor in tabel pe fiecare departament: 
+### :heavy_check_mark:Model with data entry in the table by department: 
 
  |ID|Departament|Denumire|UM|Cantitate_faptic|Cantitate_scriptic|Pret_unitar|Valoare|Diferenta_plus|Diferenta_minus|Categorie|
  |:-:|:----:|:---:|:-:|:-:|:-:|:-:|:--:|:-:|:-:|:--:|
@@ -234,7 +234,7 @@ VALUES
 (90,'BirouUrbanism','Multifunctional Brother','buc',1,1,2800,2800,0,0,'Echipamente IT');
 ```
 
-### :white_check_mark: After the insert, in order to prepare the data to be better suited for the testing process, I updated some data in the following way:
+#### :white_check_mark: After the insert, in order to prepare the data to be better suited for the testing process, I updated some data in the following way:
 
 ### :heavy_check_mark: I corrected the mistake in row 15 of the table.
 ```
