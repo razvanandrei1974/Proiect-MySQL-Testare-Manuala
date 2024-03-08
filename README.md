@@ -12,7 +12,7 @@ You can find below the database schema that was generated through Reverse Engine
 The tables are connected in the following way:
 ### :heavy_check_mark: Reverse Engineering Diagram pentru Baza de date : Patrimoniu :
 
-![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Reverse%20Engineering%20Diagram.jpg)
+![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/Reverse%20Engineering%20Diagram%201.jpg)
 
 
 **nume tabela 1** is connected with **nume tabela 2** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
