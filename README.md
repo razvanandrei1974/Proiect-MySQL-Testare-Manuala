@@ -25,6 +25,8 @@ CREATE TABLE ap_an (
 );
 ```
 ###  :white_check_mark:**AchizitiiPublice** is connected with **Angajati** through a **1:n** relationship which was implemented through **ap_an_id_achizitie_publica** as a primary key and **achizitiiPublice.id_id_achizitie_publica** as a foreign key **angajati**. 
+###  :white_check_mark:**AchizitiiPublice** is connected with **Patrimoniu** through a **1:1** relationship which was implemented through **achizitiipublice_id_achizitiipublice_id** as a primary key and **patrimoniu.id_id** as a foreign key **patrimoniu**. 
+
 # :pushpin: Database Queries
 
 ## :white_check_mark: DDL Data Definition Language 
