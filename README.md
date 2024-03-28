@@ -14,13 +14,17 @@ The tables are connected in the following way:
 
 ![Reverse Engineering Diagram](https://github.com/razvanandrei1974/Proiect-MySQL-Testare-Manuala/blob/main/EER%20DIAGRAM.jpg)
 
-
-**nume tabela 1** is connected with **nume tabela 2** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
-**nume tabela 3** is connected with **nume tabela 4** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
-**nume tabela 5** is connected with **nume tabela 6** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
-...........
-**nume tabela n** is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key
-
+```
+CREATE TABLE ap_an (
+    id INT PRIMARY KEY,
+    id_achizitie_publica INT,
+    AngajatID INT,
+    constraint fk_achizitiipublice_angajati
+    FOREIGN KEY (id_achizitie_publica) REFERENCES AchizitiiPublice(id),
+    FOREIGN KEY (AngajatID) REFERENCES angajati(id_angajati)
+);
+```
+###  :white_check_mark:**AchizitiiPublice** is connected with **Angajati** through a **1:n** relationship which was implemented through **ap_an_id_achizitie_publica** as a primary key and **achizitiiPublice.id_id_achizitie_publica** as a foreign key **angajati**. 
 # :pushpin: Database Queries
 
 ## :white_check_mark: DDL Data Definition Language 
